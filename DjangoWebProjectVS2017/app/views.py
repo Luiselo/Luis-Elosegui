@@ -88,7 +88,7 @@ def vote(request, question_id):
         # Siempre devolver un HttpResponseRedirect despues de procesar
         # exitosamente el POST de un form. Esto evita que los datos se
         # puedan postear dos veces si el usuario vuelve atras en su browser.
-        return HttpResponseRedirect(reverse('results', args=(p.id,b)))
+        return HttpResponseRedirect(reverse('results', args=(p.id,int(b))))
 
 def question_new(request):
         if request.method == "POST":
